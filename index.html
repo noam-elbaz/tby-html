@@ -84,8 +84,9 @@
       </div>
 
       <!-- Image section -->
-      <div class="mt-16  xl:mx-auto xl:max-w-7xl xl:px-8">
-        <img src="baalei-teshuva.png" alt="" class="aspect-[9/4] w-full object-cover xl:rounded-3xl" />
+      <div class="mt-16  xl:mx-auto xl:max-w-7xl xl:px-8 grid grid-cols-2 gap-8">
+        <img src="baalei-teshuva.png" alt="" class="object-cover xl:rounded-3xl" />
+        <img src="living-bachur.png" alt="" class="object-cover xl:rounded-3xl" />
       </div>
 
       <!-- Features section -->
@@ -185,12 +186,14 @@
           <p class="mt-6 text-lg leading-8 text-gray-300">Our Yeshiva offers two unique programs with a dedicated beis and rabbis for each.</p>
         </div>
         <div class="flex gap-8 w-full mt-16">
-          <div class="rounded-3xl p-8 ring-1 ring-white/10 xl:p-10 w-full">
+
+          <!-- Program A-->
+          <div class="rounded-3xl p-8 ring-1 ring-white/20 xl:p-10 w-full  bg-white/10">
             <div class="flex items-center justify-between gap-x-4">
               <h2 id="tier-freelancer" class="text-3xl font-semibold leading-8 text-white">The Exploration Program</h2>
             </div>
-            <p class="mt-4 text-sm leading-6 text-gray-300">For Baalei Teshuvas</p>
-            <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
+            <p class="mt-4 text-lg font-light  leading-12 text-gray-300">For Baalei Teshuvas</p>
+            <ul role="list" class="mt-4 space-y-3 text-sm text-gray-300 xl:mt-10">
               <li class="flex gap-x-3">
 
                 5 products
@@ -209,13 +212,16 @@
               </li>
             </ul>
           </div>
+         
 
-          <div class="rounded-3xl p-8 ring-1 ring-white/10 xl:p-10 w-full">
+          <!-- Program B-->
+          <div class="rounded-3xl p-8 ring-1 ring-white/20 xl:p-10 w-full bg-white/10">
+            <div class="bg-[url('living-bachur.png')] rounded-3xl w-full"></div>
             <div class="flex items-center justify-between gap-x-4">
               <h2 id="tier-freelancer" class="text-3xl font-semibold leading-8 text-white">The Living Torah Program</h2>
             </div>
-            <p class="mt-4 text-sm leading-6 text-gray-300">For FFB Bachurim</p>
-            <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
+            <p class="mt-4 text-lg font-light text-gray-300">For FFB Bachurim</p>
+            <ul role="list" class="mt-4 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10">
               <li class="flex gap-x-3">
 
                 5 products
@@ -358,7 +364,7 @@
                         <label for="program" class="block text-sm font-semibold leading-6 text-white">Program</label>
                         <div class="mt-2.5">
                           <select id="program" name="program"
-                            class="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 [&_*]:text-black">
+                            class="block w-full rounded-md border-0 bg-white/5 py-2.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 [&_*]:text-black">
                             <option>The Exploration Program (For Baalei Teshuva)</option>
                             <option>The Living Torah Program (For FFB Bachurim)</option>
                           </select>

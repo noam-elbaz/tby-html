@@ -180,7 +180,8 @@
               </svg>
               Inspirational Trips to Kivrei Tzaddikim.
             </dt>
-            <dd class="inline font-light">Our Yeshiva utilizes every means available to experience sustained spiritual growth, lasting inspiration, and real camaraderie and brotherhood. Whether inside the Beis Medrash or out, we intend to experience holiness wherever genuine holiness is to be found.
+            <dd class="inline font-light">Our Yeshiva utilizes every means available to experience sustained spiritual growth, lasting inspiration, and real camaraderie and brotherhood. Whether inside
+              the Beis Medrash or out, we intend to experience holiness wherever genuine holiness is to be found.
             </dd>
           </div>
         </dl>
@@ -201,16 +202,12 @@
             </div>
             <!-- <p class="mt-4 text-lg font-light leading-12 text-gray-300">For Baalei Teshuvas</p> -->
             <div class="mt-4 space-y-3 text-md lg:text-xl  font-light tracking-wide text-gray-200 xl:mt-10">
-              <p>The Exploration Program provides an open and healthy space for baalei teshuvah from many different backgrounds and walks of life who are searching to find deeper meaning and
-                connection to Judaism. This program ranges from the
-                ages of 18-29 years old.</p>
-
-              <p class="mt-4">It has an exciting schedule of daily hisbodedus, inspirational classes on Likutei Mohoran and other Chassidic sefarim, and the tools for learning Talmud, through which
-                every bachur can explore his Jewish roots and build spiritual
-                foundations for the rest of his life.</p>
+              <p>Featuring an equally unique and exciting schedule of daily hisbodedus, inspirational classes on Likutei Mohoran amongst other classic Chassidic sefarim, and the advanced tools for
+                learning Talmud through which every bachur can explore his Jewish roots and build spiritual foundations for the rest of his adult life.
+              <p>
             </div>
 
-            <h2 class="font-semibold text-xl lg:text-2xl mt-12">The Exploration Program Rabbis
+            <h2 class="font-semibold text-xl lg:text-2xl mt-12">The Exploration Program Rabbeim
             </h2>
             <ul class="mt-4 space-y-6 text-xl font-light tracking-wide text-gray-200 xl:mt-10">
               <li class="flex">
@@ -255,10 +252,10 @@
                 { time: '9:00PM', item: 'Meshivas Nefesh' },
                 { time: '9:30PM', item: 'Review' }
                 ] 
-              }" class="mt-4 divide-y divide-slate-700 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-slate-600 rounded-2xl">
+              }" class="text-xs lg:text-sm mt-4 divide-y divide-slate-700 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-slate-600 rounded-2xl ">
               <template x-for="schedule in schedules">
-                <li class="grid grid-cols-5 py-1">
-                  <div x-text="schedule.time" class="font-bold col-span-1"></div>
+                <li class="grid grid-cols-6 lg:grid-cols-5 py-1">
+                  <div x-text="schedule.time" class="font-bold col-span-2 lg:col-span-1"></div>
                   <div x-text="schedule.item" class="col-span-4"></div>
                 </li>
               </template>
@@ -283,7 +280,7 @@
               </p>
             </div>
 
-            <h2 class="font-semibold text-xl lg:text-2xl  mt-12">The Living Torah Program Rabbis
+            <h2 class="font-semibold text-xl lg:text-2xl  mt-12">The Living Torah Program Rabbeim
             </h2>
             <ul class="mt-4 space-y-6 text-xl font-light tracking-wide text-gray-200 xl:mt-10">
               <li class="flex">
@@ -335,10 +332,10 @@
                 { time: '8:45M', item: 'Maariv' },
                 { time: '9:00PM', item: 'Review of Gemarra and Halacha with Mishnah Berurah' }
                 ] 
-              }" class="mt-4 divide-y divide-slate-700 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-slate-600 rounded-2xl ">
+              }" class="text-xs lg:text-sm mt-4 divide-y divide-slate-700 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-slate-600 rounded-2xl ">
               <template x-for="schedule in schedules">
-                <li class="grid grid-cols-5 py-1">
-                  <div x-text="schedule.time" class="font-bold col-span-1"></div>
+                <li class="grid grid-cols-6 lg:grid-cols-5 py-1">
+                  <div x-text="schedule.time" class="font-bold col-span-2 lg:col-span-1"></div>
                   <div x-text="schedule.item" class="col-span-4"></div>
                 </li>
               </template>

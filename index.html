@@ -3,10 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-   <meta property="og:title" content="The Breslov Yeshiva" />
-   <meta name="og:description" content="An English-Speaking Yeshiva Dedicated to Healthy, Balanced Growth in Torah & Avodas Hashem ">
+  <meta property="og:title" content="The Breslov Yeshiva" />
+  <meta name="og:description" content="An English-Speaking Yeshiva Dedicated to Healthy, Balanced Growth in Torah & Avodas Hashem ">
   <meta name="og:keywords" content="Yeshiva, Breslov, Israel, Jerusalem, Torah, Talmud, Chassidus">
   <meta property="og:image" content="https://www.thebreslovyeshiva.com/tby-meta-image.jpg" />
+  <title>The Breslov Yeshiva</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -61,7 +64,7 @@
 
       <div class="px-6 pt-14 lg:px-8">
 
-    
+
         <div class="mx-auto max-w-4xl pt-24 text-center sm:pt-40">
           <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">An English-Speaking Yeshiva Dedicated to Healthy, Balanced Growth
             in Torah & Avodas Hashem</h2>
@@ -371,7 +374,7 @@
         }" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
       <template x-for="rabbi in rabbis">
         <li>
-          <img :src="rabbi.image" class="rounded-2xl aspect-square h-32"/>
+          <img :src="rabbi.image" class="rounded-2xl aspect-square h-32" />
           <h3 x-text="rabbi.name" class="mt-6 text-lg font-semibold leading-8 tracking-tight text-white"></h3>
           <p x-text="rabbi.role" class="text-base leading-7 text-gray-300"></p>
         </li>

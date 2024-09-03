@@ -29,7 +29,7 @@
         <div class="flex lg:flex-1">
           <a href="/" class="-m-1.5 p-1.5">
             <span class="sr-only">The Breslov Yeshiva Logo</span>
-            <img class="h-16 w-auto" src="logo-white.png" alt="" />
+            <img class="h-16 w-auto" src="logo-white.png" alt />
           </a>
         </div>
         <div class="flex lg:flex-1 lg:justify-end ">
@@ -66,11 +66,7 @@
 
       <!-- Header section -->
 
-
-
-
       <div class="px-6 pt-14 lg:px-8">
-
 
         <div class="mx-auto max-w-4xl pt-24 text-center sm:pt-40">
           <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">An English-Speaking Yeshiva Dedicated to Healthy, Balanced Growth in Torah & Avodas Hashem</h2>
@@ -79,8 +75,8 @@
 
       <!-- Image section -->
       <div class="mt-16 xl:mx-auto xl:max-w-7xl xl:px-8 grid grid-cols-2 gap-4 md:gap-8 px-2">
-        <img src="baalei-teshuva-opt.jpg" alt="" class="object-cover rounded lg:rounded-3xl" />
-        <img src="living-bachur-opt.jpg" alt="" class="object-cover rounded lg:rounded-3xl" />
+        <img src="baalei-teshuva-opt.jpg" alt class="object-cover rounded lg:rounded-3xl" />
+        <img src="living-bachur-opt.jpg" alt class="object-cover rounded lg:rounded-3xl" />
       </div>
 
       <!-- Content section -->
@@ -181,7 +177,8 @@
               </svg>
               Inspirational Trips to Kivrei Tzaddikim.
             </dt>
-            <dd class="inline font-light">Our Yeshiva utilizes every means available to experience sustained spiritual growth, lasting inspiration, and real camaraderie and brotherhood. Whether inside
+            <dd class="inline font-light">Our Yeshiva utilizes every means available to experience sustained spiritual growth, lasting inspiration, and real camaraderie and brotherhood. Whether
+              inside
               the Beis Medrash or out, we intend to experience holiness wherever genuine holiness is to be found.
             </dd>
           </div>
@@ -213,21 +210,21 @@
             </h2>
             <ul class="mt-4 space-y-6 text-xl font-light tracking-wide text-gray-200 xl:mt-10">
               <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="kalmus.jpg" alt="" />
+                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="kalmus.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ David Yisrael Kalmus</h3>
                   <p class="text-base leading-7 text-gray-300">Rosh Yeshiva, The Exploration Program</p>
                 </div>
               </li>
               <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="yochanan.jpg" alt="" />
+                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="yochanan.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Yochanan Glebocki</h3>
                   <p class="text-base leading-7 text-gray-300">Mashgiach, The Exploration Program</p>
                 </div>
               </li>
               <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="rothman.jpg" alt="" />
+                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="rothman.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Ben Tzion Rothman</h3>
                   <p class="text-base leading-7 text-gray-300">Maggid Shiur, The Exploration Program</p>
@@ -238,29 +235,46 @@
             </h2>
 
             <ul x-data="{ schedules: [
-                { time: '7:00AM', item: 'Hisbodedus in the Forests of Har Nof' },
-                { time: '8:15AM', item: 'Shacharis' },
-                { time: '9:15AM', item: 'Breakfast' },
-                { time: '9:45AM', item: 'Mishnayos' },
-                { time: '10:00AM', item: 'Gemara B’Iyun' },
-                { time: '11:30AM', item: 'Likutey Mohoran B’Iyun' },
-                { time: '1-3PM', item: 'Lunch / Break ' },
-                { time: '3:00PM', item: 'Minchah' },
-                { time: '3:30PM', item: 'Likutei Halachos' },
-                { time: '4:30PM', item: 'Shulchan Aruch' },
-                { time: '5:30PM', item: 'Daily Mashpia on Penimius and Avodas Hashem' },
-                { time: '6:30PM', item: 'Dinner / Break' },
-                { time: '8:45PM', item: 'Ma’ariv' },
-                { time: '9:00PM', item: 'Meshivas Nefesh' },
-                { time: '9:30PM', item: 'Review' }
+                { title: 'Morning Seder'},
+                { time: '7:00AM', item: 'Shacharit' },
+                { time: '8:00AM', item: 'Breakfast' },
+                { time: '8:30AM - 9:30AM', item: 'Hitbodedut in Forest of Har Nof' },
+                { time: '9:45AM', item: 'Mishnayos with R\u00B4 Bentzion Rothman' },
+                { time: '10:00AM', item: 'Introductory Gemara Shiur with R\u00B4 Bentzion Rothman' },
+                { time: '10:15AM - 11:45', item: 'Gemara Chavruta with R\u00B4 Yochanan Glebocki. R\u00B4 Bentzion Rothman checking in to address unique needs of each individual Chavruta pair and to help advance their personal skills and mastery in Gemara learning' },
+                { time: '12:00 PM', item: 'Likutey Moharan with R\u00B4 David Yisrael Kalmus' },
+                { time: '1:00 PM', item: 'Lunch Break' },
+                 { title: 'Afternoon Seder'},
+                { time: '2:00PM', item: 'Choose Your Own Learning Interest with R\u00B4 Yochanan Glebocki, R\u00B4 Bentzion Rothman, R\u00B4 Noam Elbaz, and other available Exploration Staff members. Additionally, on specific days of his choosing, Va\u00B4ad will be led by R\u00B4 Yochanan Glebocki' },
+                { time: '3:00PM', item: 'Shulchan Aruch & Likutey Halachos with R\u00B4 David Yisrael Kalmus' },
+                { time: '4:00PM', item: 'Living Breslov with esteemed Breslov Masphiam from around the Holy Land discussing essentials on how to live with Breslov Chassidus and Penimyius HaTorah within one\u00B4s personal life in a joyful, healthy, and prosperous way' },
+                { time: '5:00PM', item: 'Break' },
+                { time: '6:00PM', item: 'Dinner' },
+                 { title: 'Night Seder'},
+                { time: '8:00PM', item: 'Night Schedule' },
                 ] 
-              }" class="text-xs lg:text-sm mt-4 divide-y divide-slate-700 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-slate-600 rounded-2xl ">
+              }" class="text-xs lg:text-sm mt-4 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-white/50 rounded-2xl ">
               <template x-for="schedule in schedules">
-                <li class="grid grid-cols-6 lg:grid-cols-5 py-1">
-                  <div x-text="schedule.time" class="font-bold col-span-2 lg:col-span-1"></div>
-                  <div x-text="schedule.item" class="col-span-4"></div>
+                <li class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
+                  <div x-text="schedule.title" :class="schedule.title ? 'text-2xl font-bold col-span-6 my-4' : 'hidden'"></div>
+                  <div x-text="schedule.time" :class="schedule.time ? 'py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50' : 'hidden'"></div>
+                  <div x-text="schedule.item" :class="schedule.item ? 'py-2 pl-2 col-span-4' : 'hidden'"></div>
                 </li>
               </template>
+              <div class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
+                <div class="py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50">Sunday & Tuesday Evening</div>
+                <div class="py-2 pl-2 col-span-4">Meshivas Nefesh with R’ Berel Simpser</div>
+              </div>
+              <div class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
+                <div class="py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50">Monday & Wednesday Evening</div>
+                <div class="py-2 pl-2 col-span-4">Sippurei Ma’asios with R’ Eliyahu Chaim Reiter</div>
+              </div>
+              <div class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
+                <div class="py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50">Thursday Evening</div>
+                <div class="py-2 pl-2 col-span-4">Breslov Kumzits, featuring inspiring Divrei Torah from R’ David Yisrael Kalmus, joyous singing from R’ Shimi Fried, and uplifting musical instrumentation from R’ Moshe Levanter, R’ Eliyahu Chaim
+                Reiter, and more!</div>
+              </div>
+
             </ul>
           </div>
 
@@ -278,7 +292,8 @@
               </p>
 
               <p class="mt-4">
-                The Living Torah Program gives each bachur the opportunity to expand his knowledge and mastery of the Torah, as well as the spark of chassidus to live a truly inspired Jewish life.
+                The Living Torah Program gives each bachur the opportunity to expand his knowledge and mastery of the Torah, as well as the spark of chassidus to live a truly inspired Jewish
+                life.
               </p>
             </div>
 
@@ -286,21 +301,21 @@
             </h2>
             <ul class="mt-4 space-y-6 text-xl font-light tracking-wide text-gray-200 xl:mt-10">
               <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="simpser.jpg" alt="" />
+                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="simpser.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R' Berel Simpser</h3>
                   <p class="text-base leading-7 text-gray-300">Rosh Yeshiva, The Living Torah Program</p>
                 </div>
               </li>
               <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="mordechai.jpg" alt="" />
+                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="mordechai.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Mordechai Haberfeld</h3>
                   <p class="text-base leading-7 text-gray-300">Menahel Ruchani, The Living Torah Program</p>
                 </div>
               </li>
               <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="levanter.jpg" alt="" />
+                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="levanter.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R' Moshe Leventer</h3>
                   <p class="text-base leading-7 text-gray-300">Mashgiach, The Living Torah Program</p>
@@ -308,7 +323,7 @@
               </li>
               </li>
               <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="shimshon.jpg" alt="" />
+                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="shimshon.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Shimon Fried</h3>
                   <p class="text-base leading-7 text-gray-300">Mashpia, The Living Torah Program</p>
@@ -319,26 +334,30 @@
             </h2>
 
             <ul x-data="{ schedules: [
+                { title: 'First Seder'},
                 { time: '7:45AM', item: 'Shacharis' },
                 { time: '8:45AM', item: 'Breakfast' },
                 { time: '9:15AM', item: 'Shiur Chassidus' },
                 { time: '9:45AM', item: 'Gemara B’iyun' },
                 { time: '12:30PM', item: 'Shiur on Halachah Based on Orech HaShulchan' },
                 { time: '1:00PM', item: 'Lunch Break (Served in the Dira)' },
+                { title: 'Second Seder'},
                 { time: '2:45PM', item: 'Trip to the Forest for Hisbodedus' },
                 { time: '3:45PM', item: 'Minchah' },
                 { time: '4:00PM', item: 'Likutei Halachos with Chavrusos' },
-                { time: '4:30PM', item: 'Gemara Bekiyus (Amud/Day of the 1st Seder Masechta)' },
+                { time: '4:30PM', item: 'Gemara Bekiyus (Amud Yomi of the 1st Seder Masechta)' },
                 { time: '6:30PM', item: 'Shiur on Sichos HaRan' },
                 { time: '7:00PM', item: 'Dinner Break (Food Served in the Dira)' },
+                { title: 'Night Seder'},
                 { time: '8:45M', item: 'Maariv' },
                 { time: '9:00PM', item: 'Review of Gemara and Halacha with Mishnah Berurah' }
                 ] 
-              }" class="text-xs lg:text-sm mt-4 divide-y divide-slate-700 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-slate-600 rounded-2xl ">
+              }" class="text-xs lg:text-sm mt-4 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-white/50 rounded-2xl ">
               <template x-for="schedule in schedules">
-                <li class="grid grid-cols-6 lg:grid-cols-5 py-1">
-                  <div x-text="schedule.time" class="font-bold col-span-2 lg:col-span-1"></div>
-                  <div x-text="schedule.item" class="col-span-4"></div>
+                <li class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
+                  <div x-text="schedule.title" :class="schedule.title ? 'text-2xl font-bold col-span-6 my-4' : 'hidden'"></div>
+                  <div x-text="schedule.time" :class="schedule.time ? 'py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50' : 'hidden'"></div>
+                  <div x-text="schedule.item" :class="schedule.item ? 'py-2 pl-2 col-span-4' : 'hidden'"></div>
                 </li>
               </template>
             </ul>
@@ -353,13 +372,16 @@
 
           <p class="mt-6 text-lg leading-8 text-gray-300">The two programs operate independently in separate batei midrash, under the supervision of R’ Dovid Yisrael Kalmus as the Rosh HaMosdos.
             However, they come together for
-            Thursday night events, Shabbosim, and special trips throughout the year. These shared experiences allow bachurim from each program to benefit from the unique strengths of the other: the
+            Thursday night events, Shabbosim, and special trips throughout the year. These shared experiences allow bachurim from each program to benefit from the unique strengths of the other:
+            the
             frum
             bachurim gain from the baalei teshuvah’s renewed excitement for Judaism, while the baalei teshuvah are inspired by the knowledge and yiras Shamayim of the frum bachurim.</p>
           <p class="mt-4 text-lg leading-8 text-gray-300">Together, these programs create a vibrant and dynamic yeshiva environment where every bachur can grow and thrive spiritually.</p>
-          <p class="mt-4 text-lg leading-8 text-gray-300">This is the true path of chassidus of the Baal Shem Tov, who explains that this is why we say “Elokeinu, v’Elokei avoseinu.” On the one hand,
+          <p class="mt-4 text-lg leading-8 text-gray-300">This is the true path of chassidus of the Baal Shem Tov, who explains that this is why we say “Elokeinu, v’Elokei avoseinu.” On the one
+            hand,
             a person must be like a baal
-            teshuvah and search for his own unique connection to Hashem (as aspect of “Elokeinu”), while at the same time, he must have a solid foundation of yiras Shamayim as passed down to him from
+            teshuvah and search for his own unique connection to Hashem (as aspect of “Elokeinu”), while at the same time, he must have a solid foundation of yiras Shamayim as passed down to him
+            from
             previous generations (“Elokei avoseinu”).</p>
         </div>
       </div>
@@ -372,11 +394,14 @@
 
             <img src="rav-kivak-trans.png" class="rounded-2xl aspect-square h-48 md:h-64 w-48 md:w-64 bg-slate-500" />
 
-            <p class="mt-8 md:mt-0 md:ml-8 md:text-lg leading-8 text-gray-200">All of this is under the guidance of Rabbi Nissan Dovid Kivak, shlita, one of the great leaders of the Breslov community
+            <p class="mt-8 md:mt-0 md:ml-8 md:text-lg leading-8 text-gray-200">All of this is under the guidance of Rabbi Nissan Dovid Kivak, shlita, one of the great leaders of the Breslov
+              community
               today. Rabbi Kivak has
-              been moser nefesh to give countless shiurim over the past fifty years, establish several chedarim, yeshivos, and other institutions, and create tens of successful Breslov communities in
+              been moser nefesh to give countless shiurim over the past fifty years, establish several chedarim, yeshivos, and other institutions, and create tens of successful Breslov communities
+              in
               Eretz
-              Yisroel and abroad. He has also written many sefarim on the teachings of Rebbe Nachman. His influence and the influence of his talmidim has inspired countless people around the world.
+              Yisroel and abroad. He has also written many sefarim on the teachings of Rebbe Nachman. His influence and the influence of his talmidim has inspired countless people around the
+              world.
               Thus,
               his involvement and direction of The Breslov Yeshiva is an invaluable asset that is the foundation for great success.
 
@@ -389,7 +414,8 @@
       <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-16 lg:px-8">
         <div class="max-w-4xl lg:mx-0">
           <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Dedicated Team of Rebbeim</h2>
-          <p class="mt-6 text-lg leading-8 text-gray-300">Our incredibly talented team of rebbeim have extensive experience guiding both bachurim who've grown up religious and ba'alei teshuva who are
+          <p class="mt-6 text-lg leading-8 text-gray-300">Our incredibly talented team of rebbeim have extensive experience guiding both bachurim who've grown up religious and ba'alei teshuva who
+            are
             building a new path of Torah and mitzvos.</p>
         </div>
 
@@ -414,15 +440,7 @@
           </template>
         </ul>
 
-
       </div>
-
-
-
-
-
-
-
 
       <!-- CTA section -->
       <div id="register" class="relative isolate mt-12 lg:mt-32 px-6 lg:px-32">

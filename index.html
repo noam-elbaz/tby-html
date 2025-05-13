@@ -185,7 +185,6 @@
         </dl>
       </div>
 
-      <!-- Twe Great Programs-->
 
       <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
         <div class="mx-auto max-w-4xl lg:mx-0">
@@ -193,7 +192,7 @@
           <p class="mt-6 text-lg leading-8 text-gray-300">Within this yeshiva, we offer two exceptional programs that cater to diverse needs and backgrounds, each enriching the other through shared
             experiences.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-16">
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8 w-full mt-16">
           <!-- Program A-->
           <div class="text-white rounded-3xl p-6 ring-1 ring-white/20 xl:p-10 w-full bg-white/10">
             <div class="flex items-center justify-between gap-x-4">
@@ -213,308 +212,217 @@
                 <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="kalmus.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ David Yisrael Kalmus</h3>
-                  <p class="text-base leading-7 text-gray-300">Rosh Yeshiva, The Exploration Program</p>
-                </div>
-              </li>
-              <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="yochanan.jpg" alt />
-                <div class="pl-4 flex flex-col justify-center">
-                  <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Yochanan Glebocki</h3>
-                  <p class="text-base leading-7 text-gray-300">Mashgiach, The Exploration Program</p>
+                  <p class="text-base leading-7 text-gray-300">Rosh Yeshiva</p>
                 </div>
               </li>
               <li class="flex">
                 <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="rothman.jpg" alt />
                 <div class="pl-4 flex flex-col justify-center">
                   <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Ben Tzion Rothman</h3>
-                  <p class="text-base leading-7 text-gray-300">Maggid Shiur, The Exploration Program</p>
+                  <p class="text-base leading-7 text-gray-300">Maggid Shiur</p>
                 </div>
               </li>
             </ul>
-            <h2 class="font-semibold text-xl lg:text-2xl  mt-12">The Exploration Program Daily Schedule
-            </h2>
-
-            <ul x-data="{ schedules: [
-                { title: 'Morning Seder'},
-                { time: '7:00AM', item: 'Shacharit' },
-                { time: '8:00AM', item: 'Breakfast' },
-                { time: '8:30AM - 9:30AM', item: 'Hitbodedut in Forest of Har Nof' },
-                { time: '9:45AM', item: 'Mishnayos with R\u00B4 Bentzion Rothman' },
-                { time: '10:00AM', item: 'Introductory Gemara Shiur with R\u00B4 Bentzion Rothman' },
-                { time: '10:15AM - 11:45', item: 'Gemara Chavruta with R\u00B4 Yochanan Glebocki. R\u00B4 Bentzion Rothman checking in to address unique needs of each individual Chavruta pair and to help advance their personal skills and mastery in Gemara learning' },
-                { time: '12:00 PM', item: 'Likutey Moharan with R\u00B4 David Yisrael Kalmus' },
-                { time: '1:00 PM', item: 'Lunch Break' },
-                 { title: 'Afternoon Seder'},
-                { time: '2:00PM', item: 'Choose Your Own Learning Interest with R\u00B4 Yochanan Glebocki, R\u00B4 Bentzion Rothman, R\u00B4 Noam Elbaz, and other available Exploration Staff members. Additionally, on specific days of his choosing, Va\u00B4ad will be led by R\u00B4 Yochanan Glebocki' },
-                { time: '3:00PM', item: 'Shulchan Aruch & Likutey Halachos with R\u00B4 David Yisrael Kalmus' },
-                { time: '4:00PM', item: 'Living Breslov with esteemed Breslov Masphiam from around the Holy Land discussing essentials on how to live with Breslov Chassidus and Penimyius HaTorah within one\u00B4s personal life in a joyful, healthy, and prosperous way' },
-                { time: '5:00PM', item: 'Break' },
-                { time: '6:00PM', item: 'Dinner' },
-                 { title: 'Night Seder'},
-                { time: '8:00PM', item: 'Night Schedule' },
-                ] 
-              }" class="text-xs lg:text-sm mt-4 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-white/50 rounded-2xl ">
-              <template x-for="schedule in schedules">
-                <li class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
-                  <div x-text="schedule.title" :class="schedule.title ? 'text-2xl font-bold col-span-6 my-4' : 'hidden'"></div>
-                  <div x-text="schedule.time" :class="schedule.time ? 'py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50' : 'hidden'"></div>
-                  <div x-text="schedule.item" :class="schedule.item ? 'py-2 pl-2 col-span-4' : 'hidden'"></div>
-                </li>
-              </template>
-              <div class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
-                <div class="py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50">Sunday & Tuesday Evening</div>
-                <div class="py-2 pl-2 col-span-4">Meshivas Nefesh with R’ Berel Simpser</div>
+            <!-- Complete Exploration Program Section with Full Width and Updated Schedule -->
+            <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+              <div class="mx-auto max-w-4xl lg:mx-0">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Two Distinct Programs in Harmony</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-300">Within this yeshiva, we offer two exceptional programs that cater to diverse needs and backgrounds, each enriching the other through
+                  shared
+                  experiences.</p>
               </div>
-              <div class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
-                <div class="py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50">Monday & Wednesday Evening</div>
-                <div class="py-2 pl-2 col-span-4">Sippurei Ma’asios with R’ Eliyahu Chaim Reiter</div>
-              </div>
-              <div class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
-                <div class="py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50">Thursday Evening</div>
-                <div class="py-2 pl-2 col-span-4">Breslov Kumzits, featuring inspiring Divrei Torah from R’ David Yisrael Kalmus, joyous singing from R’ Shimi Fried, and uplifting musical instrumentation from R’ Moshe Levanter, R’ Eliyahu Chaim
-                Reiter, and more!</div>
-              </div>
+              <div class="grid grid-cols-1 md:grid-cols-1 gap-8 w-full mt-16">
+                <!-- The Exploration Program -->
+                <div class="text-white rounded-3xl p-6 ring-1 ring-white/20 xl:p-10 w-full bg-white/10">
+                  <div class="flex items-center justify-between gap-x-4">
+                    <h2 id="tier-freelancer" class="text-2xl lg:text-3xl font-semibold leading-8 text-white">The Exploration Program</h2>
+                  </div>
+                  <div class="mt-4 space-y-3 text-md lg:text-xl font-light tracking-wide text-gray-200 xl:mt-10">
+                    <p>Featuring an equally unique and exciting schedule of daily hisbodedus, inspirational classes on Likutei Mohoran amongst other classic Chassidic sefarim, and the advanced tools
+                      for
+                      learning Talmud through which every bachur can explore his Jewish roots and build spiritual foundations for the rest of his adult life.
+                    </p>
+                  </div>
 
-            </ul>
-          </div>
+                  <h2 class="font-semibold text-xl lg:text-2xl mt-12">The Exploration Program Rabbeim</h2>
+                  <ul class="mt-4 space-y-6 text-xl font-light tracking-wide text-gray-200 xl:mt-10">
+                    <li class="flex">
+                      <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="kalmus.jpg" alt="" />
+                      <div class="pl-4 flex flex-col justify-center">
+                        <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R' David Yisrael Kalmus</h3>
+                        <p class="text-base leading-7 text-gray-300">Rosh Yeshiva, The Exploration Program</p>
+                      </div>
+                    </li>
+                    <li class="flex">
+                      <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="rothman.jpg" alt="" />
+                      <div class="pl-4 flex flex-col justify-center">
+                        <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R' Ben Tzion Rothman</h3>
+                        <p class="text-base leading-7 text-gray-300">Maggid Shiur, The Exploration Program</p>
+                      </div>
+                    </li>
+                  </ul>
 
-          <!-- Program B-->
-          <div class=" text-white rounded-3xl p-6 ring-1 ring-white/20 xl:p-10 w-full bg-white/10">
-            <div class="bg-[url('living-bachur.png')] rounded-3xl w-full"></div>
-            <div class="flex items-center justify-between gap-x-4">
-              <h2 id="tier-freelancer" class="text-2xl lg:text-3xl font-semibold leading-8 text-white">The Living Torah Program</h2>
+                  <h2 class="font-semibold text-xl lg:text-2xl mt-12">TBY Summer Zman Schedule</h2>
+                  <ul x-data="{ schedules: [
+                    { title: 'Sunday / Tuesday / Thursday'},
+                    { time: '10:00AM - 10:30AM', item: 'Gemara Learning with R Sklar' },
+                    { time: '10:30AM - 12:00PM', item: 'Likutei Halachos with Rabbi Kalmus' },
+                    { time: '12:00PM - 1:00PM', item: 'Gemara Chavruta and 15-20-30 min Group learning (shiur) with Rabbi Sklar and Noam Elbaz' },
+                    { time: '2:30PM - 3:20PM', item: 'Halacha BIyun / Q & A / Background to Gemara using Artsrolls Intro to the Talmud with Rabbi Simpser' },
+                    { time: '3:30PM - 5:00PM', item: 'Likutei Moharan with Rabbi Kalmus' },
+                    { title: 'Mondays'},
+                    { time: '10:00AM - 11:00AM', item: 'Gemara Chavruta and 15-20-30 min Group learning (shiur) with R Sklar' },
+                    { time: '11:00AM - 12:00PM', item: 'Nissim Black - The Essential Reb Nachman - Advice for Living' },
+                    { time: '12:00PM - 1:00PM', item: 'Rabbi Sklar is available for 1 on 1 learning - topic of your choice' },
+                    { time: '2:30PM - 3:20PM', item: 'Halacha BIyun / Q & A / Background to Gemara using Artsrolls Intro to the Talmud with Rabbi Simpser' },
+                    { time: '3:30PM - 5:00PM', item: 'Reb Bentzion Rothman Healthy Relationship w/ $ based on Reb Nachman' },
+                    { title: 'Wednesdays'},
+                    { time: '10:00AM - 12:00PM', item: 'Gemara Chavruta and 15-20-30 min Group learning (shiur) with R Sklar' },
+                    { time: '12:00PM - 1:00PM', item: '1) Rabbi Sklar is available for 1 on 1 learning - topic of your choice<br>2) Guest speakers' },
+                    { time: '2:30PM - 3:20PM', item: 'Halacha BIyun / Q & A / Background to Gemara using Artsrolls Intro to the Talmud with Rabbi Simpser' },
+                    { time: '3:30PM - 5:00PM', item: 'Rabbi Reuven Glucksman: TEFILLAH & HISBODEDUS Workshop' },
+                    { title: 'Night Seder (in the Apartment)'},
+                    { time: 'Mon / Tue / Wed', item: '6:45PM - 7:30PM - <strong>Bitachon:</strong> Reb Nachman Sefer Hamiddos and Chovas Halevavos Shaar Habitachon' }
+                  ]}" class="text-xs lg:text-sm mt-4 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-white/50 rounded-2xl">
+                    <template x-for="schedule in schedules">
+                      <li class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
+                        <div x-text="schedule.title" :class="schedule.title ? 'text-2xl font-bold col-span-6 my-4' : 'hidden'"></div>
+                        <div x-text="schedule.time" :class="schedule.time ? 'py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50' : 'hidden'"></div>
+                        <div x-html="schedule.item" :class="schedule.item ? 'py-2 pl-2 col-span-4' : 'hidden'"></div>
+                      </li>
+                    </template>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <!-- <p class="mt-4 text-lg font-light text-gray-300">For FFB Bachurim</p> -->
-            <div class="mt-4 space-y-3 text-md lg:text-xl font-light tracking-wide text-gray-200 xl:mt-10">
-              <p>The Living Torah Program is for bachurim between the ages of 18-24 from religious backgrounds. It has a unique schedule with a solid foundation of Gemara, a focus on Halacha,
-                extraordinary shiurim on Breslov and penimiyus haTorah
-                throughout the day, and time for hisbodedus in the afternoon.
-              </p>
+            <!-- Rav Kivak -->
+            <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+              <div class="mt-12 max-w-4xl lg:mx-0">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Under the Guidance of Rabbi Nissan Dovid Kivak, Shlita</h2>
+                <div class="flex-row md:flex mt-6 ">
 
-              <p class="mt-4">
-                The Living Torah Program gives each bachur the opportunity to expand his knowledge and mastery of the Torah, as well as the spark of chassidus to live a truly inspired Jewish
-                life.
-              </p>
-            </div>
+                  <img src="rav-kivak-trans.png" class="rounded-2xl aspect-square h-48 md:h-64 w-48 md:w-64 bg-slate-500" />
 
-            <h2 class="font-semibold text-xl lg:text-2xl  mt-12">The Living Torah Program Rabbeim
-            </h2>
-            <ul class="mt-4 space-y-6 text-xl font-light tracking-wide text-gray-200 xl:mt-10">
-              <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="simpser.jpg" alt />
-                <div class="pl-4 flex flex-col justify-center">
-                  <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R' Berel Simpser</h3>
-                  <p class="text-base leading-7 text-gray-300">Rosh Yeshiva, The Living Torah Program</p>
+                  <p class="mt-8 md:mt-0 md:ml-8 md:text-lg leading-8 text-gray-200">All of this is under the guidance of Rabbi Nissan Dovid Kivak, shlita, one of the great leaders of the Breslov
+                    community
+                    today. Rabbi Kivak has
+                    been moser nefesh to give countless shiurim over the past fifty years, establish several chedarim, yeshivos, and other institutions, and create tens of successful Breslov
+                    communities
+                    in
+                    Eretz
+                    Yisroel and abroad. He has also written many sefarim on the teachings of Rebbe Nachman. His influence and the influence of his talmidim has inspired countless people around the
+                    world.
+                    Thus,
+                    his involvement and direction of The Breslov Yeshiva is an invaluable asset that is the foundation for great success.
+
+                  </p>
                 </div>
-              </li>
-              <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="mordechai.jpg" alt />
-                <div class="pl-4 flex flex-col justify-center">
-                  <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Mordechai Haberfeld</h3>
-                  <p class="text-base leading-7 text-gray-300">Menahel Ruchani, The Living Torah Program</p>
-                </div>
-              </li>
-              <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="levanter.jpg" alt />
-                <div class="pl-4 flex flex-col justify-center">
-                  <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R' Moshe Leventer</h3>
-                  <p class="text-base leading-7 text-gray-300">Mashgiach, The Living Torah Program</p>
-                </div>
-              </li>
-              </li>
-              <li class="flex">
-                <img class="aspect-square w-20 h-20 rounded-2xl object-cover" src="shimshon.jpg" alt />
-                <div class="pl-4 flex flex-col justify-center">
-                  <h3 class="text-2xl font-semibold leading-8 tracking-wide text-white">R’ Shimon Fried</h3>
-                  <p class="text-base leading-7 text-gray-300">Mashpia, The Living Torah Program</p>
-                </div>
-              </li>
-            </ul>
-            <h2 class="font-semibold text-xl lg:text-2xl  mt-12">The Living Torah Daily Schedule
-            </h2>
 
-            <ul x-data="{ schedules: [
-                { title: 'First Seder'},
-                { time: '7:45AM', item: 'Shacharis' },
-                { time: '8:45AM', item: 'Breakfast' },
-                { time: '9:15AM', item: 'Shiur Chassidus' },
-                { time: '9:45AM', item: 'Gemara B’iyun' },
-                { time: '12:30PM', item: 'Shiur on Halachah Based on Orech HaShulchan' },
-                { time: '1:00PM', item: 'Lunch Break (Served in the Dira)' },
-                { title: 'Second Seder'},
-                { time: '2:45PM', item: 'Trip to the Forest for Hisbodedus' },
-                { time: '3:45PM', item: 'Minchah' },
-                { time: '4:00PM', item: 'Likutei Halachos with Chavrusos' },
-                { time: '4:30PM', item: 'Gemara Bekiyus (Amud Yomi of the 1st Seder Masechta)' },
-                { time: '6:30PM', item: 'Shiur on Sichos HaRan' },
-                { time: '7:00PM', item: 'Dinner Break (Food Served in the Dira)' },
-                { title: 'Night Seder'},
-                { time: '8:45M', item: 'Maariv' },
-                { time: '9:00PM', item: 'Review of Gemara and Halacha with Mishnah Berurah' }
-                ] 
-              }" class="text-xs lg:text-sm mt-4 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-white/50 rounded-2xl ">
-              <template x-for="schedule in schedules">
-                <li class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
-                  <div x-text="schedule.title" :class="schedule.title ? 'text-2xl font-bold col-span-6 my-4' : 'hidden'"></div>
-                  <div x-text="schedule.time" :class="schedule.time ? 'py-2 font-bold col-span-2 lg:col-span-1 border-r border-white/50' : 'hidden'"></div>
-                  <div x-text="schedule.item" :class="schedule.item ? 'py-2 pl-2 col-span-4' : 'hidden'"></div>
-                </li>
-              </template>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- A Note about two programs-->
-      <div class="mx-auto mt-12 max-w-7xl px-6 sm:mt-16 lg:px-8">
-        <div class="mx-auto max-w-4xl lg:mx-0">
-          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Unity in Diversity</h2>
-
-          <p class="mt-6 text-lg leading-8 text-gray-300">The two programs operate independently in separate batei midrash, under the supervision of R’ Dovid Yisrael Kalmus as the Rosh HaMosdos.
-            However, they come together for
-            Thursday night events, Shabbosim, and special trips throughout the year. These shared experiences allow bachurim from each program to benefit from the unique strengths of the other:
-            the
-            frum
-            bachurim gain from the baalei teshuvah’s renewed excitement for Judaism, while the baalei teshuvah are inspired by the knowledge and yiras Shamayim of the frum bachurim.</p>
-          <p class="mt-4 text-lg leading-8 text-gray-300">Together, these programs create a vibrant and dynamic yeshiva environment where every bachur can grow and thrive spiritually.</p>
-          <p class="mt-4 text-lg leading-8 text-gray-300">This is the true path of chassidus of the Baal Shem Tov, who explains that this is why we say “Elokeinu, v’Elokei avoseinu.” On the one
-            hand,
-            a person must be like a baal
-            teshuvah and search for his own unique connection to Hashem (as aspect of “Elokeinu”), while at the same time, he must have a solid foundation of yiras Shamayim as passed down to him
-            from
-            previous generations (“Elokei avoseinu”).</p>
-        </div>
-      </div>
-
-      <!-- Rav Kivak -->
-      <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div class="mt-12 max-w-4xl lg:mx-0">
-          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Under the Guidance of Rabbi Nissan Dovid Kivak, Shlita</h2>
-          <div class="flex-row md:flex mt-6 ">
-
-            <img src="rav-kivak-trans.png" class="rounded-2xl aspect-square h-48 md:h-64 w-48 md:w-64 bg-slate-500" />
-
-            <p class="mt-8 md:mt-0 md:ml-8 md:text-lg leading-8 text-gray-200">All of this is under the guidance of Rabbi Nissan Dovid Kivak, shlita, one of the great leaders of the Breslov
-              community
-              today. Rabbi Kivak has
-              been moser nefesh to give countless shiurim over the past fifty years, establish several chedarim, yeshivos, and other institutions, and create tens of successful Breslov communities
-              in
-              Eretz
-              Yisroel and abroad. He has also written many sefarim on the teachings of Rebbe Nachman. His influence and the influence of his talmidim has inspired countless people around the
-              world.
-              Thus,
-              his involvement and direction of The Breslov Yeshiva is an invaluable asset that is the foundation for great success.
-
-            </p>
-          </div>
-
-        </div>
-      </div>
-      <!-- Team section -->
-      <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-16 lg:px-8">
-        <div class="max-w-4xl lg:mx-0">
-          <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Dedicated Team of Rebbeim</h2>
-          <p class="mt-6 text-lg leading-8 text-gray-300">Our incredibly talented team of rebbeim have extensive experience guiding both bachurim who've grown up religious and ba'alei teshuva who
-            are
-            building a new path of Torah and mitzvos.</p>
-        </div>
-
-        <ul x-data="{rabbis: 
-          [ {name: 'Rabbi Berel Simpser', role:'Rosh Yeshiva, The Living Torah Program', image:'simpser.jpg'},
-            {name: 'Rabbi David Yisrael Kalmus', role:'Rosh Yeshiva, The Exploration Program', image:'kalmus.jpg'},
-            {name: 'Rabbi Moshe Leventer', role:'Mashgiach, The Living Torah Program', image:'levanter.jpg'},
-            {name: 'Rabbi Mordechai Haberfeld', role:'Menahel Ruchani, The Living Torah Program', image:'mordechai.jpg'},
-            {name: 'Rabbi Yochanan Glebocki', role:'Mashgiach, The Exploration Program', image:'yochanan.jpg'},
-            {name: 'Rabbi Shimon Fried', role:'Mashpia, The Living Torah Program', image:'shimshon.jpg'},
-            {name: 'Rabbi Ben Tzion Rothman', role:'Maggid Shiur, The Exploration Program', image:'rothman.jpg'},
-            ]
-        }" class=" mt-12 lg:mt-20 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-6 lg:gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
-          <template x-for="rabbi in rabbis">
-            <li class="flex flex-row lg:flex-col">
-              <img :src="rabbi.image" class="rounded-2xl aspect-square h-20 lg:h-32 w-20 lg:w-32" />
-              <div class="flex-col ml-4 lg:ml-0 my-auto lg:mt-4 items-center">
-                <h3 x-text="rabbi.name" class="text-lg font-semibold leading-8 tracking-tight text-white"></h3>
-                <p x-text="rabbi.role" class="text-base leading-7 text-gray-300"></p>
               </div>
-            </li>
-          </template>
-        </ul>
+            </div>
+            <!-- Team section -->
+            <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-16 lg:px-8">
+              <div class="max-w-4xl lg:mx-0">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Our Dedicated Team of Rebbeim</h2>
+                <p class="mt-6 text-lg leading-8 text-gray-300">Our incredibly talented team of rebbeim have extensive experience guiding both bachurim who've grown up religious and ba'alei teshuva
+                  who
+                  are
+                  building a new path of Torah and mitzvos.</p>
+              </div>
 
-      </div>
-
-      <!-- CTA section -->
-      <div id="register" class="relative isolate mt-12 lg:mt-32 px-6 lg:px-32">
-        <div class="mx-auto sm:px-6 lg:px-8">
-          <div class="mx-auto flex flex-col bg-white/5 px-6 py-16 ring-1 ring-white/10 rounded-xl lg:rounded-2xl sm:p-8 lg:mx-0 lg:flex-row lg:items-center lg:py-20">
-            <div class="w-full flex-col items-center">
-              <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">Register Now For This Year
-              </h2>
-              <p class="mt-6 text-lg leading-8 text-gray-300 text-center">Join our incredible family of Talmidim and Rebbeim full of simcha and inspiration.</p>
-              <div class="mt-10 flex">
-                <!-- FORM GOES HERE-->
-
-                <form action="https://formspree.io/f/meojeeyg" method="POST" class="z-50 max-w-3xl w-full lg:w-5xl mx-auto">
-                  <div class="mx-auto">
-                    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                      <div>
-                        <label for="first-name" class="block text-sm font-semibold leading-6 text-white">First name</label>
-                        <div class="mt-2.5">
-                          <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="First Name"
-                            class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
-                        </div>
-                      </div>
-                      <div>
-                        <label for="last-name" class="block text-sm font-semibold leading-6 text-white">Last name</label>
-                        <div class="mt-2.5">
-                          <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Last Name"
-                            class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
-                        </div>
-                      </div>
-                      <div class="sm:col-span-2">
-                        <label for="email" class="block text-sm font-semibold leading-6 text-white">Email</label>
-                        <div class="mt-2.5">
-                          <input type="email" name="email" id="email" autocomplete="email" placeholder="Email"
-                            class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
-                        </div>
-                      </div>
-                      <div class="sm:col-span-2">
-                        <label for="phone-number" class="block text-sm font-semibold leading-6 text-white">Phone number</label>
-                        <div class="mt-2.5">
-                          <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" placeholder="Phone"
-                            class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
-                        </div>
-                      </div>
-                      <div class="sm:col-span-2">
-                        <label for="program" class="block text-sm font-semibold leading-6 text-white">Program</label>
-                        <div class="mt-2.5">
-                          <select id="program" name="program"
-                            class="block w-full rounded-md border-0 bg-white/5 p-2.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 [&_*]:text-black">
-                            <option>The Exploration Program</option>
-                            <option>The Living Torah Program</option>
-                            <option>Not sure which program is right for me</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="sm:col-span-2">
-                        <label for="message" class="block text-sm font-semibold leading-6 text-white">Message</label>
-                        <div class="mt-2.5">
-                          <textarea type="text" name="message" id="message" placeholder="Tell us a little bit about yourself..." rows="2"
-                            class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"></textarea>
-                        </div>
-                      </div>
+              <!-- Updated Rabbi list without Yochanan Glebocki -->
+              <ul x-data="{rabbis: 
+            [ {name: 'Rabbi Berel Simpser', role:'Rosh Yeshiva, The Living Torah Program', image:'simpser.jpg'},
+              {name: 'Rabbi David Yisrael Kalmus', role:'Rosh Yeshiva, The Exploration Program', image:'kalmus.jpg'},
+              {name: 'Rabbi Ben Tzion Rothman', role:'Maggid Shiur, The Exploration Program', image:'rothman.jpg'},
+              ]
+          }" class="mt-12 lg:mt-20 grid max-w-4xl grid-cols-1 gap-x-8 gap-y-6 lg:gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4">
+                <template x-for="rabbi in rabbis">
+                  <li class="flex flex-row lg:flex-col">
+                    <img :src="rabbi.image" class="rounded-2xl aspect-square h-20 lg:h-32 w-20 lg:w-32" />
+                    <div class="flex-col ml-4 lg:ml-0 my-auto lg:mt-4 items-center">
+                      <h3 x-text="rabbi.name" class="text-lg font-semibold leading-8 tracking-tight text-white"></h3>
+                      <p x-text="rabbi.role" class="text-base leading-7 text-gray-300"></p>
                     </div>
-                    <div class="mt-8 flex justify-end">
-                      <button type="submit"
-                        class="w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Submit</button>
+                  </li>
+                </template>
+              </ul>
+
+            </div>
+
+            <!-- CTA section -->
+            <div id="register" class="relative isolate mt-12 lg:mt-32 px-6 lg:px-32">
+              <div class="mx-auto sm:px-6 lg:px-8">
+                <div class="mx-auto flex flex-col bg-white/5 px-6 py-16 ring-1 ring-white/10 rounded-xl lg:rounded-2xl sm:p-8 lg:mx-0 lg:flex-row lg:items-center lg:py-20">
+                  <div class="w-full flex-col items-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-center">Register Now For This Year
+                    </h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-300 text-center">Join our incredible family of Talmidim and Rebbeim full of simcha and inspiration.</p>
+                    <div class="mt-10 flex">
+                      <!-- FORM GOES HERE-->
+
+                      <form action="https://formspree.io/f/meojeeyg" method="POST" class="z-50 max-w-3xl w-full lg:w-5xl mx-auto">
+                        <div class="mx-auto">
+                          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                            <div>
+                              <label for="first-name" class="block text-sm font-semibold leading-6 text-white">First name</label>
+                              <div class="mt-2.5">
+                                <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="First Name"
+                                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+                              </div>
+                            </div>
+                            <div>
+                              <label for="last-name" class="block text-sm font-semibold leading-6 text-white">Last name</label>
+                              <div class="mt-2.5">
+                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Last Name"
+                                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+                              </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                              <label for="email" class="block text-sm font-semibold leading-6 text-white">Email</label>
+                              <div class="mt-2.5">
+                                <input type="email" name="email" id="email" autocomplete="email" placeholder="Email"
+                                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+                              </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                              <label for="phone-number" class="block text-sm font-semibold leading-6 text-white">Phone number</label>
+                              <div class="mt-2.5">
+                                <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" placeholder="Phone"
+                                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
+                              </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                              <label for="program" class="block text-sm font-semibold leading-6 text-white">Program</label>
+                              <div class="mt-2.5">
+                                <select id="program" name="program"
+                                  class="block w-full rounded-md border-0 bg-white/5 p-2.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 [&_*]:text-black">
+                                  <option>The Exploration Program</option>
+                                  <option>The Living Torah Program</option>
+                                  <option>Not sure which program is right for me</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                              <label for="message" class="block text-sm font-semibold leading-6 text-white">Message</label>
+                              <div class="mt-2.5">
+                                <textarea type="text" name="message" id="message" placeholder="Tell us a little bit about yourself..." rows="2"
+                                  class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="mt-8 flex justify-end">
+                            <button type="submit"
+                              class="w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Submit</button>
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="absolute inset-x-0 -top-72 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
-          <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25" style="
+              <div class="absolute inset-x-0 -top-72 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl" aria-hidden="true">
+                <div class="aspect-[1318/752] w-[82.375rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25" style="
                 clip-path: polygon(
                   73.6% 51.7%,
                   91.7% 11.8%,
@@ -534,8 +442,8 @@
                   73.6% 51.7%
                 );
               "></div>
-        </div>
-      </div>
+              </div>
+            </div>
     </main>
 
     <!-- Footer -->

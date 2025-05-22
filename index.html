@@ -33,8 +33,10 @@
           </a>
         </div>
         <div class="flex lg:flex-1 lg:justify-end ">
-          <a href="donate" class="text-sm font-semibold leading-6 text-white py-1.5 px-3.5 rounded-xl bg-white/20 hover:bg-white/30">Donate</a>
-          <a href="#register" class="ml-4 text-sm font-semibold leading-6 text-white py-1.5 px-3.5 rounded-xl bg-white/20 hover:bg-white/30">Register Now <span aria-hidden="true">&rarr;</span></a>
+          <a href="donate" class="text-sm font-semibold leading-6 text-white py-1.5 px-4 rounded-xl bg-white/20 hover:bg-white/30 transition duration-300 shadow-sm hover:shadow-md">Donate</a>
+          <a href="#register"
+            class="text-sm font-semibold leading-6 text-white py-1.5 px-4 rounded-xl bg-indigo-600/80 hover:bg-indigo-500/90 transition duration-300 shadow-sm hover:shadow-md">Register Now <span
+              aria-hidden="true">&rarr;</span></a>
         </div>
       </nav>
     </header>
@@ -283,7 +285,7 @@
                     { time: '3:30PM - 5:00PM', item: 'Rabbi Reuven Glucksman: TEFILLAH & HISBODEDUS Workshop' },
                     { title: 'Night Seder (in the Apartment)'},
                     { time: 'Mon / Tue / Wed', item: '6:45PM - 7:30PM - <strong>Bitachon:</strong> Reb Nachman Sefer Hamiddos and Chovas Halevavos Shaar Habitachon' }
-                  ]}" class="text-xs lg:text-sm mt-4 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-white/50 rounded-2xl">
+                  ]}" class="text-xs lg:text-sm mt-4 font-light tracking-wide text-gray-200 xl:mt-10 p-4 border border-white/50 rounded-2xl bg-white/5 backdrop-blur-sm shadow-inner">
                     <template x-for="schedule in schedules">
                       <li class="grid grid-cols-6 lg:grid-cols-5 border-b border-white/50">
                         <div x-text="schedule.title" :class="schedule.title ? 'text-2xl font-bold col-span-6 my-4' : 'hidden'"></div>
@@ -392,17 +394,15 @@
                                   class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6" />
                               </div>
                             </div>
-                            <div class="sm:col-span-2">
+                            <!-- <div class="sm:col-span-2">
                               <label for="program" class="block text-sm font-semibold leading-6 text-white">Program</label>
                               <div class="mt-2.5">
                                 <select id="program" name="program"
                                   class="block w-full rounded-md border-0 bg-white/5 p-2.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6 [&_*]:text-black">
                                   <option>The Exploration Program</option>
-                                  <option>The Living Torah Program</option>
-                                  <option>Not sure which program is right for me</option>
                                 </select>
                               </div>
-                            </div>
+                            </div> -->
                             <div class="sm:col-span-2">
                               <label for="message" class="block text-sm font-semibold leading-6 text-white">Message</label>
                               <div class="mt-2.5">
@@ -413,7 +413,7 @@
                           </div>
                           <div class="mt-8 flex justify-end">
                             <button type="submit"
-                              class="w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Submit</button>
+                              class="w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-md hover:shadow-lg hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 transition duration-300 transform hover:-translate-y-0.5">Submit</button>
                           </div>
                         </div>
                       </form>

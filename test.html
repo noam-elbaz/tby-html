@@ -539,42 +539,10 @@
                 x-transition:leave-end="opacity-0 transform -translate-y-2" class="border-t border-white/10 bg-white/5 backdrop-blur-sm p-6">
 
                 <!-- PayPal Donation Form -->
-                <div class="bg-gray-800/50 rounded-2xl p-6 border border-white/10">
-                  <h4 class="text-white font-semibold mb-4 text-center">The Breslov Yeshiva</h4>
-                  <p class="text-gray-300 text-sm mb-4 text-center">Donation</p>
-
-                  <!-- Amount Input -->
-                  <div class="mb-4">
-                    <div class="relative">
-                      <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg">$</span>
-                      <input type="number" placeholder="Enter amount"
-                        class="w-full pl-8 pr-16 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-500/50 transition-all duration-300">
-                      <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">USD</span>
-                    </div>
-                  </div>
-
-                  <!-- PayPal Button Container -->
-                  <div class="space-y-3">
-                    <button
-                      class="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
-                      PayPal
-                    </button>
-
-                    <button class="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 border border-gray-600">
-                      Checkout
-                    </button>
-
-                    <!-- Payment Methods -->
-                    <div class="flex justify-center space-x-2 pt-2">
-                      <div class="w-10 h-6 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold">P</div>
-                      <div class="w-10 h-6 bg-blue-800 rounded text-white text-xs flex items-center justify-center font-bold">V</div>
-                      <div class="w-10 h-6 bg-red-600 rounded text-white text-xs flex items-center justify-center font-bold">M</div>
-                      <span class="text-gray-400 text-xs flex items-center">+ more</span>
-                    </div>
-                  </div>
+                <div class="bg-white/30 rounded p-6 border border-white/10">
 
                   <!-- Actual PayPal Integration (Hidden for demo) -->
-                  <div class="hidden">
+                  <div class="">
                     <div id="paypal-container-MWUP5A2ENS4B4"></div>
                     <script>
                       if (typeof paypal !== 'undefined') {

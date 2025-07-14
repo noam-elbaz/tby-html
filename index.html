@@ -277,7 +277,79 @@
           </div>
 
           <!-- Video Section -->
-          <div class="video-section" x-data="{ playing: false }">
+          <div class="video-section" x-data="{ 
+            playing: false, 
+            pipEnabled: false,
+            async playVideo() {
+              this.playing = true;
+              await this.$nextTick();
+              const video = this.$refs.videoPlayer;
+              if (video) {
+                try {
+                  await video.play();
+                  this.setupPiP();
+                } catch (error) {
+                  console.log('Video play failed:', error);
+                }
+              }
+            },
+            setupPiP() {
+              const video = this.$refs.videoPlayer;
+              if (!video || !document.pictureInPictureEnabled) return;
+              
+              // Set up Intersection Observer for PiP
+              const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                  if (!video.paused && this.playing) {
+                    if (entry.intersectionRatio < 0.5 && !this.pipEnabled) {
+                      // Video is mostly out of view, enter PiP
+                      this.enterPiP();
+                    } else if (entry.intersectionRatio >= 0.5 && this.pipEnabled) {
+                      // Video is back in view, exit PiP
+                      this.exitPiP();
+                    }
+                  }
+                });
+              }, { threshold: [0.5] });
+              
+              observer.observe(video);
+              
+              // Clean up observer when video ends or is paused
+              video.addEventListener('ended', () => observer.disconnect());
+              video.addEventListener('pause', () => observer.disconnect());
+            },
+            async enterPiP() {
+              const video = this.$refs.videoPlayer;
+              if (video && !this.pipEnabled) {
+                try {
+                  await video.requestPictureInPicture();
+                  this.pipEnabled = true;
+                } catch (error) {
+                  console.log('PiP failed:', error);
+                }
+              }
+            },
+            async exitPiP() {
+              if (this.pipEnabled && document.pictureInPictureElement) {
+                try {
+                  await document.exitPictureInPicture();
+                  this.pipEnabled = false;
+                } catch (error) {
+                  console.log('Exit PiP failed:', error);
+                }
+              }
+            },
+            closeVideo() {
+              const video = this.$refs.videoPlayer;
+              if (video) {
+                video.pause();
+                if (this.pipEnabled) {
+                  this.exitPiP();
+                }
+              }
+              this.playing = false;
+            }
+          }">
             <div class="video-container relative mx-auto max-w-lg">
               <!-- Video Preview/Poster -->
               <div x-show="!playing" class="relative">
@@ -289,23 +361,19 @@
                     type="video/mp4">
                 </video>
                 <div class="video-overlay"></div>
-                <div class="play-button" @click="playing = true">
+                <div class="play-button" @click="playVideo()">
                 </div>
               </div>
 
               <!-- Full Video Player -->
               <div x-show="playing" class="relative">
-                <video class="w-full h-auto rounded-2xl" controls autoplay x-ref="videoPlayer">
+                <video class="w-full h-auto rounded-2xl" controls x-ref="videoPlayer" @loadeddata="$refs.videoPlayer.play()">
                   <source
                     src="https://b313e8803f7a4150a884-6e0b076a1e92e31c40be44f466689c50.ssl.cf5.rackcdn.com/images/loginid204900/6166626634616134393431393166393735383063326464303931666531356636_31373438323730393436.mp4#t=0.001"
                     type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
-                <div class="close-button" @click="playing = false; $refs.videoPlayer.pause();">
-                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
-                </div>
+                <!-- Removed the close button -->
               </div>
 
               <!-- Video Caption -->

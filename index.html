@@ -113,6 +113,101 @@
         transform: translateY(-5px);
       }
     }
+
+    .video-container {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(79, 70, 229, 0.1), rgba(147, 51, 234, 0.1));
+      pointer-events: none;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .play-button:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9));
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .play-button::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 20px solid rgba(79, 70, 229, 0.8);
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+
+    .video-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .close-button:hover {
+      background: rgba(0, 0, 0, 0.9);
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .video-section {
+      animation: fadeInUp 0.8s ease-out 0.3s both;
+    }
   </style>
 </head>
 
@@ -158,25 +253,72 @@
       </div>
 
       <!-- Content Layer -->
-      <div class="relative z-10 mx-auto max-w-4xl text-center">
-        <h1 class="text-6xl font-bold tracking-tight text-white sm:text-7xl mb-8 drop-shadow-2xl">
-          <span class="block mb-4">The Breslov Yeshiva</span>
-          <span class="gradient-text text-3xl sm:text-5xl font-light">Where Torah Meets Transformation</span>
-        </h1>
-        <p class="mt-8 text-xl leading-8 text-gray-100 max-w-3xl mx-auto drop-shadow-lg">
-          An English-Speaking Yeshiva dedicated to healthy, balanced growth in Torah & Avodas Hashem,
-          nurturing the next generation of inspired Torah scholars.
-        </p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-          <a href="#register"
-            class="rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/25">
-            Begin Your Journey
-          </a>
-          <a href="#about" class="text-lg font-semibold leading-6 text-gray-100 hover:text-white transition-colors backdrop-blur-sm bg-white/10 px-6 py-3 rounded-full">
-            Learn more <span aria-hidden="true">→</span>
-          </a>
+      <div class="relative z-10 mx-auto max-w-6xl">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <!-- Text Content -->
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl mb-8 drop-shadow-2xl">
+              <span class="block mb-4">The Breslov Yeshiva</span>
+              <span class="gradient-text text-2xl sm:text-3xl lg:text-4xl font-light">Where Torah Meets Transformation</span>
+            </h1>
+            <p class="mt-8 text-xl leading-8 text-gray-100 max-w-2xl mx-auto lg:mx-0 drop-shadow-lg">
+              An English-Speaking Yeshiva dedicated to healthy, balanced growth in Torah & Avodas Hashem,
+              nurturing the next generation of inspired Torah scholars.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+              <a href="#register"
+                class="rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/25">
+                Begin Your Journey
+              </a>
+              <a href="#about" class="text-lg font-semibold leading-6 text-gray-100 hover:text-white transition-colors backdrop-blur-sm bg-white/10 px-6 py-3 rounded-full">
+                Learn more <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Video Section -->
+          <div class="video-section" x-data="{ playing: false }">
+            <div class="video-container relative mx-auto max-w-lg">
+              <!-- Video Preview/Poster -->
+              <div x-show="!playing" class="relative">
+                <video class="w-full h-auto rounded-2xl"
+                  poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23374151'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23f3f4f6' font-family='Arial, sans-serif' font-size='14'%3EWatch Our Story%3C/text%3E%3C/svg%3E"
+                  muted preload="metadata">
+                  <source
+                    src="https://b313e8803f7a4150a884-6e0b076a1e92e31c40be44f466689c50.ssl.cf5.rackcdn.com/images/loginid204900/6166626634616134393431393166393735383063326464303931666531356636_31373438323730393436.mp4#t=0.001"
+                    type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+                <div class="play-button" @click="playing = true">
+                </div>
+              </div>
+
+              <!-- Full Video Player -->
+              <div x-show="playing" class="relative">
+                <video class="w-full h-auto rounded-2xl" controls autoplay x-ref="videoPlayer">
+                  <source
+                    src="https://b313e8803f7a4150a884-6e0b076a1e92e31c40be44f466689c50.ssl.cf5.rackcdn.com/images/loginid204900/6166626634616134393431393166393735383063326464303931666531356636_31373438323730393436.mp4#t=0.001"
+                    type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="close-button" @click="playing = false; $refs.videoPlayer.pause();">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Video Caption -->
+              <div class="absolute -bottom-8 left-0 right-0 text-center">
+                <p class="text-sm text-gray-300 bg-black/30 backdrop-blur-sm rounded-full px-4 py-2 inline-block">
+                  Discover Our Community
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="absolute bottom-10 left-1/2 -translate-x-1/2 scroll-indicator z-10">
         <svg class="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -204,14 +346,14 @@
         <div class="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 backdrop-blur-sm rounded-3xl p-8 border border-white/10 card-hover">
           <h3 class="text-2xl font-bold text-white mb-4">Our Vision</h3>
           <p class="text-gray-300 leading-relaxed">
-            To build a yeshiva where young men can discover the depth, joy, and truth of Rebbe Nachman’s path — and carry it with them for life.
+            To build a yeshiva where young men can discover the depth, joy, and truth of Rebbe Nachman's path — and carry it with them for life.
 
           </p>
         </div>
         <div class="bg-gradient-to-br from-purple-900/20 to-pink-900/20 backdrop-blur-sm rounded-3xl p-8 border border-white/10 card-hover">
           <h3 class="text-2xl font-bold text-white mb-4">Our Purpose</h3>
           <p class="text-gray-300 leading-relaxed">
-            To give English-speaking young men a spiritual home where they can grow in Torah, tefillah, and emunah — and discover the joy Judaism through Rebbe Nachman’s teachings.
+            To give English-speaking young men a spiritual home where they can grow in Torah, tefillah, and emunah — and discover the joy Judaism through Rebbe Nachman's teachings.
           </p>
         </div>
       </div>
@@ -342,11 +484,6 @@
       </div>
     </section>
 
-
-
-
-   
-
     <!-- Rav Kivak Section -->
     <section class="mx-auto mt-32 max-w-7xl px-6 sm:mt-12 lg:px-8">
       <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900/30 to-indigo-900/30 backdrop-blur-sm">
@@ -374,7 +511,6 @@
       </div>
     </section>
 
-
     <!-- Donate Section -->
     <section id="donate" class="mx-auto mt-32 max-w-7xl px-6 sm:mt-20 lg:px-8 py-16">
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -388,7 +524,8 @@
           <p class="text-gray-300 mb-8">Every contribution helps us provide scholarships, enhance our learning programs, and maintain our beautiful facility.</p>
 
           <div x-data="{ showPayPal: false }" class="space-y-4">
-            <a href="https://donate.stripe.com/fZebL4dC66aQaHe144" class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 group border border-white/10">
+            <a href="https://donate.stripe.com/fZebL4dC66aQaHe144" target="_blank" rel="noopener noreferrer"
+              class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 group border border-white/10">
               <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center">
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
@@ -400,7 +537,8 @@
               </svg>
             </a>
 
-            <a href="https://cash.app/$TBYeshiva" class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 group border border-white/10">
+            <a href="https://cash.app/$TBYeshiva" target="_blank" rel="noopener noreferrer"
+              class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 group border border-white/10">
               <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
                 <span class="text-white font-bold text-xl">$</span>
               </div>
@@ -410,7 +548,8 @@
               </svg>
             </a>
 
-            <a href="https://venmo.com/TheBreslov-Yeshiva" class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 group border border-white/10">
+            <a href="https://venmo.com/TheBreslov-Yeshiva" target="_blank" rel="noopener noreferrer"
+              class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-all duration-300 group border border-white/10">
               <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                 <span class="text-white font-bold text-xl">V</span>
               </div>
@@ -562,7 +701,6 @@
             <p>Nurturing Torah Scholars Since Our Founding</p>
           </div>
         </div>
-        imageoptim --quality=85
       </div>
     </div>
   </footer>

@@ -16,6 +16,21 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#0F004B">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Prevent FOUC by hiding body until styles load -->
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    body.loaded {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script
@@ -209,6 +224,13 @@
       animation: fadeInUp 0.8s ease-out 0.3s both;
     }
   </style>
+
+  <!-- Script to show body when styles are loaded -->
+  <script>
+    window.addEventListener('load', function () {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </head>
 
 <body class="bg-gray-950 min-h-screen overflow-x-hidden">
@@ -223,21 +245,23 @@
 
   <!-- Enhanced Navigation -->
   <header class="fixed inset-x-0 top-0 z-50 backdrop-blur-lg bg-gray-900/70 border-b border-white/10">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:p-4 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="/" class="-m-1.5 p-1.5 group">
           <span class="sr-only">The Breslov Yeshiva</span>
-          <img class="h-16 w-auto transition-transform group-hover:scale-110" src="logo-white.png" alt="The Breslov Yeshiva" />
+          <img class="h-10 sm:h-12 lg:h-16 w-auto transition-transform group-hover:scale-110" src="logo-white.png" alt="The Breslov Yeshiva" />
         </a>
       </div>
-      <div class="flex space-x-4 lg:flex-1 lg:justify-end">
+      <div class="flex space-x-2 sm:space-x-3 lg:space-x-4 lg:flex-1 lg:justify-end">
         <a href="#donate"
-          class="text-sm font-semibold leading-6 text-white py-2 px-6 rounded-full bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+          class="text-xs sm:text-sm font-semibold leading-6 text-white py-1.5 px-3 sm:py-2 sm:px-4 lg:py-2 lg:px-6 rounded-full bg-gradient-to-r from-purple-600/80 to-pink-600/80 hover:from-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
           Donate
         </a>
         <a href="#register"
-          class="text-sm font-semibold leading-6 text-white py-2 px-6 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25">
-          Register Now <span aria-hidden="true" class="ml-1">→</span>
+          class="text-xs sm:text-sm font-semibold leading-6 text-white py-1.5 px-3 sm:py-2 sm:px-4 lg:py-2 lg:px-6 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25">
+          <span class="hidden sm:inline">Register Now</span>
+          <span class="sm:hidden">Register</span>
+          <span aria-hidden="true" class="ml-1">→</span>
         </a>
       </div>
     </nav>
@@ -278,78 +302,78 @@
 
           <!-- Video Section -->
           <div class="video-section" x-data="{ 
-            playing: false, 
-            pipEnabled: false,
-            async playVideo() {
-              this.playing = true;
-              await this.$nextTick();
-              const video = this.$refs.videoPlayer;
-              if (video) {
-                try {
-                  await video.play();
-                  this.setupPiP();
-                } catch (error) {
-                  console.log('Video play failed:', error);
-                }
-              }
-            },
-            setupPiP() {
-              const video = this.$refs.videoPlayer;
-              if (!video || !document.pictureInPictureEnabled) return;
-              
-              // Set up Intersection Observer for PiP
-              const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                  if (!video.paused && this.playing) {
-                    if (entry.intersectionRatio < 0.5 && !this.pipEnabled) {
-                      // Video is mostly out of view, enter PiP
-                      this.enterPiP();
-                    } else if (entry.intersectionRatio >= 0.5 && this.pipEnabled) {
-                      // Video is back in view, exit PiP
-                      this.exitPiP();
-                    }
-                  }
-                });
-              }, { threshold: [0.5] });
-              
-              observer.observe(video);
-              
-              // Clean up observer when video ends or is paused
-              video.addEventListener('ended', () => observer.disconnect());
-              video.addEventListener('pause', () => observer.disconnect());
-            },
-            async enterPiP() {
-              const video = this.$refs.videoPlayer;
-              if (video && !this.pipEnabled) {
-                try {
-                  await video.requestPictureInPicture();
-                  this.pipEnabled = true;
-                } catch (error) {
-                  console.log('PiP failed:', error);
-                }
-              }
-            },
-            async exitPiP() {
-              if (this.pipEnabled && document.pictureInPictureElement) {
-                try {
-                  await document.exitPictureInPicture();
-                  this.pipEnabled = false;
-                } catch (error) {
-                  console.log('Exit PiP failed:', error);
-                }
-              }
-            },
-            closeVideo() {
-              const video = this.$refs.videoPlayer;
-              if (video) {
-                video.pause();
-                if (this.pipEnabled) {
-                  this.exitPiP();
-                }
-              }
-              this.playing = false;
-            }
-          }">
+  playing: false, 
+  pipEnabled: false,
+  async playVideo() {
+    this.playing = true;
+    await this.$nextTick();
+    const video = this.$refs.videoPlayer;
+    if (video) {
+      try {
+        await video.play();
+        this.setupPiP();
+      } catch (error) {
+        console.log('Video play failed:', error);
+      }
+    }
+  },
+  setupPiP() {
+    const video = this.$refs.videoPlayer;
+    if (!video || !document.pictureInPictureEnabled) return;
+    
+    // Set up Intersection Observer for PiP
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!video.paused && this.playing) {
+          if (entry.intersectionRatio < 0.5 && !this.pipEnabled) {
+            // Video is mostly out of view, enter PiP
+            this.enterPiP();
+          } else if (entry.intersectionRatio >= 0.5 && this.pipEnabled) {
+            // Video is back in view, exit PiP
+            this.exitPiP();
+          }
+        }
+      });
+    }, { threshold: [0.5] });
+    
+    observer.observe(video);
+    
+    // Clean up observer when video ends or is paused
+    video.addEventListener('ended', () => observer.disconnect());
+    video.addEventListener('pause', () => observer.disconnect());
+  },
+  async enterPiP() {
+    const video = this.$refs.videoPlayer;
+    if (video && !this.pipEnabled) {
+      try {
+        await video.requestPictureInPicture();
+        this.pipEnabled = true;
+      } catch (error) {
+        console.log('PiP failed:', error);
+      }
+    }
+  },
+  async exitPiP() {
+    if (this.pipEnabled && document.pictureInPictureElement) {
+      try {
+        await document.exitPictureInPicture();
+        this.pipEnabled = false;
+      } catch (error) {
+        console.log('Exit PiP failed:', error);
+      }
+    }
+  },
+  closeVideo() {
+    const video = this.$refs.videoPlayer;
+    if (video) {
+      video.pause();
+      if (this.pipEnabled) {
+        this.exitPiP();
+      }
+    }
+    this.playing = false;
+  }
+}">
             <div class="video-container relative mx-auto max-w-lg">
               <!-- Video Preview/Poster -->
               <div x-show="!playing" class="relative">
@@ -531,15 +555,15 @@
       </div>
 
       <div x-data="{rabbis: 
-        [ 
-          {name: 'Rabbi David Yisrael Kalmus', role:'Rosh Yeshiva, Rosh Mosad', image:'kalmus.jpg'},  
-          {name: 'Rabbi Berel Simpser', role:'Rosh Yeshiva, CFO', image:'simpser.jpg'},
-          {name: 'Rabbi Ben Tzion Rothman', role:'Maggid Shiur', image:'rothman.jpg'},
-          {name: 'Rabbi Nissim Black', role:'Rebbe', image:'black.jpg'},
-          {name: 'Rabbi Chayim Sklar', role:'Maggid Shiur, Gemara Rebbe', image:'sklar.jpg'},
-          {name: 'Rabbi Noam Elbaz', role:'Mentor, Rebbe', image:'elbaz.jpg'},
-        ]
-      }" class="mt-16 grid max-w-5xl mx-auto grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+[ 
+{name: 'Rabbi David Yisrael Kalmus', role:'Rosh Yeshiva, Rosh Mosad', image:'kalmus.jpg'},  
+{name: 'Rabbi Berel Simpser', role:'Rosh Yeshiva, CFO', image:'simpser.jpg'},
+{name: 'Rabbi Ben Tzion Rothman', role:'Maggid Shiur', image:'rothman.jpg'},
+{name: 'Rabbi Nissim Black', role:'Rebbe', image:'black.jpg'},
+{name: 'Rabbi Chayim Sklar', role:'Maggid Shiur, Gemara Rebbe', image:'sklar.jpg'},
+{name: 'Rabbi Noam Elbaz', role:'Mentor, Rebbe', image:'elbaz.jpg'},
+]
+}" class="mt-16 grid max-w-5xl mx-auto grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <template x-for="rabbi in rabbis">
           <div class="group relative">
             <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 backdrop-blur-sm p-6 border border-white/10 card-hover">

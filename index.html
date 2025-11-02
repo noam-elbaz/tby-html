@@ -541,7 +541,7 @@
               </svg>
             </div>
             <h3 class="text-xl font-semibold text-white mb-2">Prime Location</h3>
-            <p class="text-gray-300">Beautiful facility in the heart of Jerusalem's Har Nof neighborhood</p>
+            <p class="text-gray-300">Beautiful facility in the Ramat Beit Shemesh neighborhood</p>
           </div>
         </div>
       </div>
@@ -560,14 +560,14 @@
 {name: 'Rabbi Berel Simpser', role:'Rosh Yeshiva, CFO', image:'simpser.jpg'},
 {name: 'Rabbi Ben Tzion Rothman', role:'Maggid Shiur', image:'rothman.jpg'},
 {name: 'Rabbi Nissim Black', role:'Rebbe', image:'black.jpg'},
-{name: 'Rabbi Chayim Sklar', role:'Maggid Shiur, Gemara Rebbe', image:'sklar.jpg'},
+{name: 'Rabbi Yehuda Kastel', role:'Mashgiach, Mentor', image:'yehuda.jpg'},
 {name: 'Rabbi Noam Elbaz', role:'Mentor, Rebbe', image:'elbaz.jpg'},
 ]
 }" class="mt-16 grid max-w-5xl mx-auto grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <template x-for="rabbi in rabbis">
           <div class="group relative">
             <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 backdrop-blur-sm p-6 border border-white/10 card-hover">
-              <img :src="rabbi.image" :alt="rabbi.name" class="mx-auto rounded-2xl aspect-square h-32 w-32 object-cover mb-4 ring-4 ring-white/20" />
+              <img :src="rabbi.image" :alt="rabbi.name" class="mx-auto rounded-2xl aspect-square h-32 w-32 object-cover mb-4 ring-4 ring-white/20" :class="rabbi.name === 'Rabbi Yehuda Kastel' ? 'object-top' : ''" />
               <h3 x-text="rabbi.name" class="text-xl font-semibold text-white text-center"></h3>
               <p x-text="rabbi.role" class="text-center text-gray-300 mt-1"></p>
             </div>
@@ -946,6 +946,11 @@
             <p>&copy; 2025 The Breslov Yeshiva</p>
             <p>Nurturing Torah Scholars Since Our Founding</p>
           </div>
+        </div>
+        <div class="text-sm text-gray-400 text-center md:text-right">
+          <p class="font-semibold text-gray-300">Location</p>
+          <p>32 Nachal Lachish</p>
+          <p>Ramat Beit Shemesh, Israel</p>
         </div>
       </div>
     </div>
